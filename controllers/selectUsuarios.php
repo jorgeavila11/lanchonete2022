@@ -1,5 +1,5 @@
 <?php
-    include '../db/conaxao.php';
+    include '../db/conexao.php';
 
     $select = "SELECT * FROM usuario";//seleciona todos os campo da tabela 
     $result = mysqli_query($conn, $select);//faz uma query com o resultado do select

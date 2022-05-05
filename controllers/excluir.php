@@ -1,6 +1,6 @@
 <?php
 
-    include '../db/conaxao.php';
+    include '../db/conexao.php';
 
 
     $sql = "DELETE FROM pedidos WHERE id = ?";

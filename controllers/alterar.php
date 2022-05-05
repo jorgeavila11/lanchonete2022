@@ -1,5 +1,5 @@
 <?php
-    include '../db/conaxao.php';
+    include '../db/conexao.php';
 
     $sql = "UPDATE usuarios SET nome ='?', email = '?', senha= '?' WHERE id= ?";
 

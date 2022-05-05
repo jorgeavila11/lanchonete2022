@@ -1,13 +1,20 @@
 <?php
-    include '../db/conaxao.php';
+    session_start();
+    include '../db/conexao.php';
 
-    $select = "SELECT * FROM usuario";//seleciona todos os campo da tabela 
-    $result = mysqli_query($conn, $select);//faz uma query com o resultado do select
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+
+    $select = "SELECT * FROM usuario WHERE email='$email' AND senha='$senha'";
+    $result = mysqli_query($conn, $select);
     if(mysqli_num_rows($result) > 0){
-        while($row = mysqli_fetch_array($result)){        
-        echo "Nome: ".$row['nome']."<br>";
-        echo "Email: ".$row['email']."<br>";
-        } }
+        $_SESSION["email"] = $email;
+        header('Location: ../views/pedidos.php');
+    }else{        
+        header('Location: ../home.php');
+    }
+    
+
 
 
 ?>
